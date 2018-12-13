@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+
+  padding: 2rem;
+
+  color: $white;
+  background-color: $gray900;
+
+  justify-content: center;
+}
+
+.header__title {
+  font-size: 6rem;
+  line-height: 0.8;
+
+  margin-bottom: 0;
+
+  text-transform: uppercase;
+
+  color: $primary500;
+
+  & span {
+    display: inline-block;
+  }
+
+  & > span:last-child {
+    font-weight: $lite;
+
+    margin-left: -10px;
+  }
+}
+
+.header__bottom {
+  display: flex;
+
+  margin-top: 0.6rem;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.header__sub-title {
+  font-size: 1.8rem;
+  font-weight: $lite;
+
+  padding: 0 1rem;
+
+  text-transform: uppercase;
+}
+
+.header__whisker {
+  height: 1px;
+
+  background-color: $white;
+
+  flex: 1;
+}
