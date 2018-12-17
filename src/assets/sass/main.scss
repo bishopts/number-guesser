@@ -11,9 +11,20 @@
 // Components
 @import 'components/btn';
 @import 'components/input';
-@import 'components/form-label';
+@import 'components/label';
+@import 'components/surface';
+@import 'components/input-row';
+@import 'components/game-card';
+@import 'components/title';
+@import 'components/input-module';
+@import 'components/range-num';
 
 // Layout
 @import 'layout/header';
+@import 'layout/main';
+@import 'layout/game';
+@import 'layout/results';
+@import 'layout/past-games';
+@import 'layout/game-controls';
 
 // Pages

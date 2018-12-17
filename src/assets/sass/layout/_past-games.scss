@@ -1,0 +1,10 @@
+.past-games {
+  width: 50%;
+  padding: 1rem;
+
+  background-color: $gray200;
+
+  @media (max-width: 1136px) {
+    width: 100%;
+  }
+}
