@@ -1,0 +1,11 @@
+.surface {
+  margin: 1rem;
+  padding: 1rem;
+
+  border: 2px solid $gray200;
+  background-color: $white;
+}
+
+.surface--dark-border {
+  border-color: $gray700;
+}

@@ -1,0 +1,13 @@
+.game-controls {
+  display: flex;
+
+  margin-top: 2rem;
+
+  justify-content: space-between;
+
+  @media (max-width: 1136px) {
+    flex-direction: column;
+
+    justify-content: center;
+  }
+}

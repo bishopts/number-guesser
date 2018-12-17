@@ -15,6 +15,7 @@
 
   <body>
     
+    <!-- Header -->
     <header class="header">
       <div class="header__content">
         <h1 class="header__title">
@@ -29,10 +30,178 @@
       </div>
     </header>
 
-    main
-      game
-      recent-games
+    <!-- Main -->
+    <main class="container main__container">
+      
+      <!-- Game Column -->
+      <section class="game">
 
+        <!-- Set Range -->
+        <div class="surface">
+          <span class="title">Set Range</span>
+          <div class="input-row">
+            <div class="input-module">
+              <span class="label">Min Range</span>
+              <input type="text" class="input">
+            </div>
+            <div class="input-module">
+              <span class="label">Max Range</span>
+              <input type="text" class="input">
+            </div>
+            <button class="btn">Update</button>
+          </div>
+        </div>
+        
+        <!-- Challenger Input -->
+        <div class="surface">
+
+          <p>The Current Range is <span class="range-num">1</span> to <span class="range-num">100</span></p>
+
+          <div>
+            <span class="title">Challenger 1</span>
+            <div class="input-row">
+              <div class="input-module input-module--2x">
+                <span class="label">Name</span>
+                <input type="text" class="input">
+              </div>
+              <div class="input-module">
+                <span class="label">Guess</span>
+                <input type="text" class="input">
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <span class="title">Challenger 2</span>
+            <div class="input-row">
+              <div class="input-module input-module--2x">
+                <span class="label">Name</span>
+                <input type="text" class="input">
+              </div>
+              <div class="input-module">
+                <span class="label">Guess</span>
+                <input type="text" class="input">
+              </div>
+            </div>
+          </div>
+
+          <div class="game-controls">
+            <button class="btn">Submit Guess</button>
+            <button class="btn">Reset Game</button>
+            <button class="btn">Clear Game</button>
+          </div>
+        </div>
+        
+        
+        <!-- Latest Score -->
+        <div class="surface">
+
+          <span class="title">Latest Score</span class="title">
+
+          <div class="results">
+
+            <div class="results__card">
+              <span class="results__name">Bjorn</span>
+              <span class="results__detail">current guess</span>
+              <span class="results__number">97</span>
+              <span class="results__detail results__detail--large">that's too high</span>
+            </div>
+
+            <div class="results__card">
+              <span class="results__name">Lars</span>
+              <span class="results__detail">current guess</span>
+              <span class="results__number">3</span>
+              <span class="results__detail results__detail--large">that's too high</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- Past Games Column -->
+      <section class="past-games">
+        
+        <!-- Game Card -->
+        <div class="game-card surface surface--dark-border">
+          <div class="game-card__header">
+            <span class="game-card__name">Challenger 1 Name</span>
+            <span>vs.</span>
+            <span class="game-card__name">Challenger 2 Name</span>
+          </div>
+          <div class="game-card__body">
+            <span class="game-card__winner">Challenger 2 Name</span>
+            <span class="game-card__winner game-card__winner--lite">Winner</span>
+          </div>
+          <div class="game-card__footer">
+            <div>
+              <span class="game-card__number">47</span>
+              <span>Guesses</span>
+            </div>
+            <div>
+              <span class="game-card__number">1.35</span>
+              <span>Minutes</span>
+            </div>
+            <div>
+              <i class="fas fa-times-circle"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game Card -->
+        <div class="game-card surface surface--dark-border">
+          <div class="game-card__header">
+            <span class="game-card__name">Challenger 1 Name</span>
+            <span>vs.</span>
+            <span class="game-card__name">Challenger 2 Name</span>
+          </div>
+          <div class="game-card__body">
+            <span class="game-card__winner">Challenger 2 Name</span>
+            <span class="game-card__winner game-card__winner--lite">Winner</span>
+          </div>
+          <div class="game-card__footer">
+            <div>
+              <span class="game-card__number">47</span>
+              <span>Guesses</span>
+            </div>
+            <div>
+              <span class="game-card__number">1.35</span>
+              <span>Minutes</span>
+            </div>
+            <div>
+              <i class="fas fa-times-circle"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game Card -->
+        <div class="game-card surface surface--dark-border">
+          <div class="game-card__header">
+            <span class="game-card__name">Challenger 1 Name</span>
+            <span>vs.</span>
+            <span class="game-card__name">Challenger 2 Name</span>
+          </div>
+          <div class="game-card__body">
+            <span class="game-card__winner">Challenger 2 Name</span>
+            <span class="game-card__winner game-card__winner--lite">Winner</span>
+          </div>
+          <div class="game-card__footer">
+            <div>
+              <span class="game-card__number">47</span>
+              <span>Guesses</span>
+            </div>
+            <div>
+              <span class="game-card__number">1.35</span>
+              <span>Minutes</span>
+            </div>
+            <div>
+              <i class="fas fa-times-circle"></i>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+    </main>
   </body>
-  
 </html>

@@ -513,10 +513,6 @@ h6 {
   width: 90%;
   max-width: 1180px;
   margin: 0 auto; }
-  @media (max-width: 400px) {
-    .container {
-      width: 100%;
-      padding: 0 20px; } }
 
 .italic {
   font-style: italic; }
@@ -535,7 +531,7 @@ h6 {
   letter-spacing: 0.1rem;
   text-transform: uppercase;
   color: #404040;
-  border: 1px solid gray;
+  border: 1px solid #d1d1d1;
   border-radius: 4px;
   background-color: transparent; }
   .btn:hover, .btn:focus {
@@ -554,6 +550,7 @@ h6 {
 
 .input {
   height: 38px;
+  width: 90%;
   padding: 0 10px;
   border: 1px solid #d1d1d1;
   border-radius: 4px;
@@ -561,17 +558,134 @@ h6 {
   -webkit-box-shadow: none;
   box-shadow: none; }
   .input:focus {
-    border: 1px solid #b3eb8f;
+    border: 1px solid #dd1972;
     outline: 0; }
+  @media (max-width: 568px) {
+    .input {
+      width: 100%; } }
 
-.form-label {
-  font-weight: 600;
+.label {
   display: block; }
 
-.form-label__body {
+.label__body {
   font-weight: 400;
   display: inline-block;
   margin-left: 0.5rem; }
+
+.surface {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border: 2px solid #d1d1d1; }
+
+.surface--dark-border {
+  border-color: #606060; }
+
+.input-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end; }
+  @media (max-width: 568px) {
+    .input-row {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch; } }
+
+.game-card {
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #707070;
+  text-transform: uppercase;
+  font-weight: 300; }
+
+.game-card__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  border-bottom: 1px solid #ececec;
+  padding: 1rem;
+  text-align: center; }
+  @media (max-width: 460px) {
+    .game-card__header {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; } }
+
+.game-card__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 2rem 0;
+  border-bottom: 1px solid #ececec;
+  text-align: center; }
+
+.game-card__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem; }
+
+.game-card__name {
+  font-weight: 700; }
+
+.game-card__winner {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.2; }
+
+.game-card__winner--lite {
+  font-weight: 300; }
+
+.game-card__number {
+  font-weight: 700;
+  color: #404040; }
+
+.title {
+  font-size: 2.4rem;
+  font-weight: 700; }
+
+.input-module {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+.input-module--2x {
+  -webkit-box-flex: 2;
+  -ms-flex: 2;
+  flex: 2; }
+
+.range-num {
+  font-weight: 600;
+  text-decoration: underline; }
 
 .header {
   display: -webkit-box;
@@ -582,7 +696,10 @@ h6 {
   background-color: #404040;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .header__title {
   font-size: 6rem;
@@ -595,6 +712,9 @@ h6 {
   .header__title > span:last-child {
     font-weight: 300;
     margin-left: -10px; }
+  @media (max-width: 640px) {
+    .header__title {
+      font-size: 10vw; } }
 
 .header__bottom {
   display: -webkit-box;
@@ -613,6 +733,9 @@ h6 {
   font-weight: 300;
   padding: 0 1rem;
   text-transform: uppercase; }
+  @media (max-width: 640px) {
+    .header__sub-title {
+      font-size: 1.4rem; } }
 
 .header__whisker {
   height: 1px;
@@ -620,3 +743,90 @@ h6 {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1; }
+
+.main__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  @media (max-width: 1136px) {
+    .main__container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: 100%; } }
+
+.game {
+  width: 50%;
+  background-color: #ececec;
+  padding: 1rem;
+  border-right: 2px #9b9b9b solid; }
+  @media (max-width: 1136px) {
+    .game {
+      width: 100%;
+      border: 0; } }
+
+.results {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+
+.results__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center; }
+
+.results__name {
+  font-size: 1.8rem;
+  color: #606060;
+  font-weight: 700; }
+
+.results__detail {
+  font-weight: 300;
+  color: #9b9b9b; }
+
+.results__detail--large {
+  font-size: 2.2rem; }
+
+.results__number {
+  font-size: 7.2rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #dd1972; }
+
+.past-games {
+  width: 50%;
+  padding: 1rem;
+  background-color: #d1d1d1; }
+  @media (max-width: 1136px) {
+    .past-games {
+      width: 100%; } }
+
+.game-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-top: 2rem; }
+  @media (max-width: 1136px) {
+    .game-controls {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }
