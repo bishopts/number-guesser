@@ -41,3 +41,12 @@
     background-color: $primary700;
   }
 }
+
+.btn--disabled {
+  color: $gray200;
+
+  &:hover {
+    color: $gray200;
+    border-color: inherit;
+  }
+}

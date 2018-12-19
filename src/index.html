@@ -58,7 +58,7 @@
           <p>The Current Range is <span class="range-num" id="js-min-range-display">1</span> to <span class="range-num" id="js-max-range-display">100</span></p>
 
           <div>
-            <span class="title">Challenger 1</span>
+            <span class="title">Player 1</span>
             <div class="input-row">
               <div class="input-module input-module--2x">
                 <span class="label">Name</span>
@@ -72,7 +72,7 @@
           </div>
 
           <div>
-            <span class="title">Challenger 2</span>
+            <span class="title">Player 2</span>
             <div class="input-row">
               <div class="input-module input-module--2x">
                 <span class="label">Name</span>
@@ -84,11 +84,12 @@
               </div>
             </div>
           </div>
-
+          
+          <!-- Game Controls -->
           <div class="game-controls">
             <button type="button" class="btn" id="js-submit-guess">Submit Guess</button>
-            <button type="button" class="btn" id="js-reset-game">Reset Game</button>
-            <button type="button" class="btn" id="js-clear-game" disabled>Clear Game</button>
+            <button type="button" class="btn btn--disabled" id="js-reset-game" disabled>Reset Game</button>
+            <button type="button" class="btn btn--disabled" id="js-clear-game" disabled>Clear Game</button>
           </div>
         </div>
         
@@ -101,17 +102,17 @@
           <div class="results">
 
             <div class="results__card">
-              <span class="results__name" id="js-results-name1">Bjorn</span>
+              <span class="results__name" id="js-results-name1">Player 1</span>
               <span class="results__detail">current guess</span>
-              <span class="results__number" id="js-results-guess1">97</span>
-              <span class="results__detail results__detail--large" id="js-results-message1">that's too high</span>
+              <span class="results__number" id="js-results-guess1">0</span>
+              <span class="results__detail results__detail--large" id="js-results-message1"></span>
             </div>
 
             <div class="results__card">
-              <span class="results__name" id="js-results-name2">Lars</span>
+              <span class="results__name" id="js-results-name2">Player 2</span>
               <span class="results__detail">current guess</span>
-              <span class="results__number" id="js-results-guess2">3</span>
-              <span class="results__detail results__detail--large" id="js-results-message2">that's too high</span>
+              <span class="results__number" id="js-results-guess2">0</span>
+              <span class="results__detail results__detail--large" id="js-results-message2"></span>
             </div>
 
           </div>

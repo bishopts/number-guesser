@@ -29,9 +29,9 @@ var resultsPlayer2Msg = document.getElementById('js-results-message2');
 // Inner Ints
 // =============================================================================
 
-var minRange = null;
-var maxRange = null;
-var randNum = null;
+var minRange = 1;
+var maxRange = 100;
+var randNum = getRandomInt(minRange, maxRange);
 var p1Name = null;
 var p2Name = null;
 var p1Guess = null;
@@ -60,6 +60,7 @@ updateRange.addEventListener('click', function() {
   console.log(randNum);
 })
 
+
 // 'Submit Guess' Button
 // =============================================================================
 
@@ -69,14 +70,93 @@ submitGuessBtn.addEventListener('click', function() {
   p1Name = player1NameInput.value;
   p2Name = player2NameInput.value;
 
-  if (p1Guess === randNum || p2Guess === randNum) {
-    // You Win!
+  // Game Logic
+  if (p1Guess > randNum) {
+    resultsPlayer1Msg.innerText = `that's too high`;
+  } else if (p1Guess < randNum) {
+    resultsPlayer1Msg.innerText = `that's too low`;
+  }
+
+  if (p2Guess > randNum) {
+    resultsPlayer2Msg.innerText = `that's too high`;
+  } else if (p2Guess < randNum) {
+    resultsPlayer2Msg.innerText = `that's too low`;
+  }
+
+  if (p1Guess === randNum) {
+    resultsPlayer1Msg.innerText = `BOOM!`;
+    resetGame();
+  }
+
+  if (p2Guess === randNum) {
+    resultsPlayer2Msg.innerText = `BOOM!`;
+    resetGame();
   }
 
 
+  // Results Card
   resultsPlayer1Name.innerText = p1Name;
   resultsPlayer2Name.innerText = p2Name;
   resultsPlayer1Guess.innerText = p1Guess;
   resultsPlayer2Guess.innerText = p2Guess;
 
 })
+
+
+// 'Clear' Button
+// =============================================================================
+
+clearGameBtn.addEventListener('click', function() {
+  player1NameInput.value = '';
+  player2NameInput.value = '';
+  player1GuessInput.value = '';
+  player2GuessInput.value = '';
+
+  disableCheck();
+});
+
+
+// 'Reset' Button
+// =============================================================================
+
+resetGameBtn.addEventListener('click', resetGame);
+
+
+// Disable Buttons
+// =============================================================================
+
+function disableCheck() {
+  if (player1NameInput.value == '' && player2NameInput.value == '' &&
+    player1GuessInput.value == '' && player2GuessInput.value == '') {
+    resetGameBtn.disabled = true;
+    clearGameBtn.disabled = true;
+    resetGameBtn.classList.add('btn--disabled');
+    clearGameBtn.classList.add('btn--disabled');
+  } else {
+    resetGameBtn.disabled = false;
+    clearGameBtn.disabled = false;
+    resetGameBtn.classList.remove('btn--disabled');
+    clearGameBtn.classList.remove('btn--disabled');
+  }
+};
+
+player1NameInput.addEventListener('keyup', disableCheck);
+player2NameInput.addEventListener('keyup', disableCheck);
+player1GuessInput.addEventListener('keyup', disableCheck);
+player2GuessInput.addEventListener('keyup', disableCheck);
+
+
+// Game Reset
+// =============================================================================
+
+function resetGame() {
+  player1NameInput.value = '';
+  player2NameInput.value = '';
+  player1GuessInput.value = '';
+  player2GuessInput.value = '';
+
+  randNum = getRandomInt(minRange, maxRange);
+  console.log(randNum);
+
+  disableCheck();
+}
