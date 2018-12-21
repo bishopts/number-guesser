@@ -2,11 +2,15 @@
   display: flex;
 
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
 
   @media (max-width: 568px) {
     flex-direction: column;
 
     align-items: stretch;
   }
+}
+
+.input-row--align-bottom {
+  align-items: flex-end;
 }

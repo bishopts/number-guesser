@@ -24,6 +24,9 @@ var resultsPlayer1Guess = document.getElementById('js-results-guess1');
 var resultsPlayer2Guess = document.getElementById('js-results-guess2');
 var resultsPlayer1Msg = document.getElementById('js-results-message1');
 var resultsPlayer2Msg = document.getElementById('js-results-message2');
+var player1GuessError = document.getElementById('js-guess-error-1');
+var player2GuessError = document.getElementById('js-guess-error-2');
+var rangeError = document.getElementById('js-range-error');
 
 
 // Inner Ints
@@ -50,14 +53,23 @@ function getRandomInt(min, max) {
 // =============================================================================
 
 updateRange.addEventListener('click', function() {
-  minRange = parseInt(minRangeInput.value, 10);
-  maxRange = parseInt(maxRangeInput.value, 10);
+  if (parseInt(minRangeInput.value, 10) >= parseInt(maxRangeInput.value, 10)) {
+    rangeError.innerText = `Minimum range is greater than or equal to maximum range!`;
+    rangeError.style.display = 'block';
+  } else if (minRangeInput.value === '' || maxRangeInput.value === '') {
+    rangeError.innerText = `Enter a minimum and maximum range!`;
+    rangeError.style.display = 'block';
+  } else {
+    minRange = parseInt(minRangeInput.value, 10);
+    maxRange = parseInt(maxRangeInput.value, 10);
 
-  minRangeDisplay.innerText = minRange;
-  maxRangeDisplay.innerText = maxRange;
+    minRangeDisplay.innerText = minRange;
+    maxRangeDisplay.innerText = maxRange;
+    rangeError.style.display = 'none';
 
-  randNum = getRandomInt(minRange, maxRange);
-  console.log(randNum);
+    randNum = getRandomInt(minRange, maxRange);
+    console.log(randNum);
+  }
 })
 
 
@@ -70,7 +82,20 @@ submitGuessBtn.addEventListener('click', function() {
   p1Name = player1NameInput.value;
   p2Name = player2NameInput.value;
 
-  // Game Logic
+  if (p1Guess < minRange || p1Guess > maxRange || player1GuessInput.value === '') {
+    player1GuessError.style.display = 'block';
+  } else if (p2Guess < minRange || p2Guess > maxRange || player2GuessInput.value === '') {
+    player2GuessError.style.display = 'block';
+  } else {
+    player1GuessError.style.display = 'none';
+    player2GuessError.style.display = 'none';
+    gameLogic();
+    updateResults();
+  }
+})
+
+
+function gameLogic() {
   if (p1Guess > randNum) {
     resultsPlayer1Msg.innerText = `that's too high`;
   } else if (p1Guess < randNum) {
@@ -92,15 +117,16 @@ submitGuessBtn.addEventListener('click', function() {
     resultsPlayer2Msg.innerText = `BOOM!`;
     resetGame();
   }
+}
 
 
-  // Results Card
+function updateResults() {
   resultsPlayer1Name.innerText = p1Name;
   resultsPlayer2Name.innerText = p2Name;
   resultsPlayer1Guess.innerText = p1Guess;
   resultsPlayer2Guess.innerText = p2Guess;
+}
 
-})
 
 
 // 'Clear' Button
@@ -111,6 +137,8 @@ clearGameBtn.addEventListener('click', function() {
   player2NameInput.value = '';
   player1GuessInput.value = '';
   player2GuessInput.value = '';
+  player1GuessError.style.display = 'none';
+  player2GuessError.style.display = 'none';
 
   disableCheck();
 });
@@ -154,6 +182,9 @@ function resetGame() {
   player2NameInput.value = '';
   player1GuessInput.value = '';
   player2GuessInput.value = '';
+  player1GuessError.style.display = 'none';
+  player2GuessError.style.display = 'none';
+
 
   randNum = getRandomInt(minRange, maxRange);
   console.log(randNum);
