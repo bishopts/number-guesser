@@ -50,3 +50,4 @@ exports.build = gulp.series(images, copy);
 
 gulp.watch('src/assets/sass/**', { events: 'all' }, css);
 gulp.watch('src/*.html', { events: 'all' }, reload);
+gulp.watch('src/assets/js/*.js', { events: 'all' }, reload);

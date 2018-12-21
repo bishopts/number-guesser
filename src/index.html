@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang='en-US'>
-  
+
   <head>
     <meta charset='utf-8'>
     <meta http-equiv='x-ua-compatible' content='ie=edge'>
@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    
+
     <!-- Header -->
     <header class="header">
       <div class="header__content">
@@ -32,26 +32,27 @@
 
     <!-- Main -->
     <main class="container main__container">
-      
+
       <!-- Game Column -->
       <section class="game">
 
         <!-- Set Range -->
         <div class="surface">
           <span class="title">Set Range</span>
-          <div class="input-row">
+          <div class="input-row input-row--align-bottom">
             <div class="input-module">
               <span class="label">Min Range</span>
-              <input type="text" class="input" id="js-min-range-input">
+              <input type="number" class="input" id="js-min-range-input">
             </div>
             <div class="input-module">
               <span class="label">Max Range</span>
-              <input type="text" class="input" id="js-max-range-input">
+              <input type="number" class="input" id="js-max-range-input">
             </div>
             <button type="button" class="btn" id="js-update-range-btn">Update</button>
           </div>
+          <span class="error" id="js-range-error">Minimun range is higher than maximum range.</span>
         </div>
-        
+
         <!-- Challenger Input -->
         <div class="surface">
 
@@ -67,6 +68,7 @@
               <div class="input-module">
                 <span class="label">Guess</span>
                 <input type="number" class="input" id="js-player1-guess-input">
+                <span class="error" id="js-guess-error-1">Error</span>
               </div>
             </div>
           </div>
@@ -81,10 +83,11 @@
               <div class="input-module">
                 <span class="label">Guess</span>
                 <input type="number" class="input" id="js-player2-guess-input">
+                <span class="error" id="js-guess-error-2">Error</span>
               </div>
             </div>
           </div>
-          
+
           <!-- Game Controls -->
           <div class="game-controls">
             <button type="button" class="btn" id="js-submit-guess">Submit Guess</button>
@@ -92,8 +95,8 @@
             <button type="button" class="btn btn--disabled" id="js-clear-game" disabled>Clear Game</button>
           </div>
         </div>
-        
-        
+
+
         <!-- Latest Score -->
         <div class="surface">
 
@@ -103,19 +106,19 @@
 
             <div class="results__card">
               <span class="results__name" id="js-results-name1">Player 1</span>
-              <span class="results__detail">current guess</span>
-              <span class="results__number" id="js-results-guess1">0</span>
-              <span class="results__detail results__detail--large" id="js-results-message1"></span>
-            </div>
+          <span class="results__detail">current guess</span>
+          <span class="results__number" id="js-results-guess1">0</span>
+          <span class="results__detail results__detail--large" id="js-results-message1"></span>
+        </div>
 
-            <div class="results__card">
-              <span class="results__name" id="js-results-name2">Player 2</span>
-              <span class="results__detail">current guess</span>
-              <span class="results__number" id="js-results-guess2">0</span>
-              <span class="results__detail results__detail--large" id="js-results-message2"></span>
-            </div>
+        <div class="results__card">
+          <span class="results__name" id="js-results-name2">Player 2</span>
+          <span class="results__detail">current guess</span>
+          <span class="results__number" id="js-results-guess2">0</span>
+          <span class="results__detail results__detail--large" id="js-results-message2"></span>
+        </div>
 
-          </div>
+        </div>
 
         </div>
 
@@ -123,32 +126,6 @@
 
       <!-- Past Games Column -->
       <section class="past-games">
-        
-        <!-- Game Card -->
-        <div class="game-card surface surface--dark-border">
-          <div class="game-card__header">
-            <span class="game-card__name">Challenger 1 Name</span>
-            <span>vs.</span>
-            <span class="game-card__name">Challenger 2 Name</span>
-          </div>
-          <div class="game-card__body">
-            <span class="game-card__winner">Challenger 2 Name</span>
-            <span class="game-card__winner game-card__winner--lite">Winner</span>
-          </div>
-          <div class="game-card__footer">
-            <div>
-              <span class="game-card__number">47</span>
-              <span>Guesses</span>
-            </div>
-            <div>
-              <span class="game-card__number">1.35</span>
-              <span>Minutes</span>
-            </div>
-            <div>
-              <i class="fas fa-times-circle"></i>
-            </div>
-          </div>
-        </div>
 
         <!-- Game Card -->
         <div class="game-card surface surface--dark-border">
@@ -201,10 +178,37 @@
             </div>
           </div>
         </div>
-        
+
+        <!-- Game Card -->
+        <div class="game-card surface surface--dark-border">
+          <div class="game-card__header">
+            <span class="game-card__name">Challenger 1 Name</span>
+            <span>vs.</span>
+            <span class="game-card__name">Challenger 2 Name</span>
+          </div>
+          <div class="game-card__body">
+            <span class="game-card__winner">Challenger 2 Name</span>
+            <span class="game-card__winner game-card__winner--lite">Winner</span>
+          </div>
+          <div class="game-card__footer">
+            <div>
+              <span class="game-card__number">47</span>
+              <span>Guesses</span>
+            </div>
+            <div>
+              <span class="game-card__number">1.35</span>
+              <span>Minutes</span>
+            </div>
+            <div>
+              <i class="fas fa-times-circle"></i>
+            </div>
+          </div>
+        </div>
+
       </section>
     </main>
 
     <script src="assets/js/main.js"></script>
   </body>
+
 </html>

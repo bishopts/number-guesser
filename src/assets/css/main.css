@@ -517,6 +517,12 @@ h6 {
 .italic {
   font-style: italic; }
 
+.error {
+  font-size: 1.5rem;
+  display: none;
+  margin-top: -15px;
+  color: #dd1972; }
+
 .btn {
   font-size: 11px;
   font-weight: 600;
@@ -594,9 +600,9 @@ h6 {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end; }
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
   @media (max-width: 568px) {
     .input-row {
       -webkit-box-orient: vertical;
@@ -606,6 +612,11 @@ h6 {
       -webkit-box-align: stretch;
       -ms-flex-align: stretch;
       align-items: stretch; } }
+
+.input-row--align-bottom {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end; }
 
 .game-card {
   font-weight: 300;
