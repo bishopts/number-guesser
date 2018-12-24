@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang='en-US'>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv='x-ua-compatible' content='ie=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name='author' content='Tyler Dane Seay'>
+    <meta name='description' content='A game where two users can guess a number between 1 and 100.'>
+    <title>Number Guesser</title>
+    <link rel='stylesheet' href='assets/css/main.css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header__content">
+        <h1 class="header__title">
+          <span>Number</span>
+          <span>Guesser</span>
+        </h1>
+        <div class="header__bottom">
+          <span class="header__whisker"></span>
+          <span class="header__sub-title">Ultimate Challenger Edition</span>
+          <span class="header__whisker"></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="container main__container">
+
+      <!-- Game Column -->
+      <section class="game">
+
+        <!-- Set Range -->
+        <div class="surface">
+          <span class="title">Set Range</span>
+          <div class="input-row input-row--align-bottom">
+            <div class="input-module">
+              <span class="label">Min Range</span>
+              <input type="number" class="input" id="js-min-range-input">
+            </div>
+            <div class="input-module">
+              <span class="label">Max Range</span>
+              <input type="number" class="input" id="js-max-range-input">
+            </div>
+            <button type="button" class="btn" id="js-update-range-btn">Update</button>
+          </div>
+          <span class="error" id="js-range-error">Minimun range is higher than maximum range.</span>
+        </div>
+
+        <!-- Challenger Input -->
+        <div class="surface">
+
+          <p>The Current Range is <span class="range-num" id="js-min-range-display">1</span> to <span class="range-num" id="js-max-range-display">100</span></p>
+
+          <div>
+            <span class="title">Player 1</span>
+            <div class="input-row">
+              <div class="input-module input-module--2x">
+                <span class="label">Name</span>
+                <input type="text" title="Name must use alpha-numeric characters" class="input" pattern="^\w+$" id="js-player1-name-input">
+              </div>
+              <div class="input-module">
+                <span class="label">Guess</span>
+                <input type="number" class="input" id="js-player1-guess-input">
+                <span class="error" id="js-guess-error-1">Error</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <span class="title">Player 2</span>
+            <div class="input-row">
+              <div class="input-module input-module--2x">
+                <span class="label">Name</span>
+                <input type="text" title="Name must use alpha-numeric characters" class="input" pattern="^\w+$" id="js-player2-name-input">
+              </div>
+              <div class="input-module">
+                <span class="label">Guess</span>
+                <input type="number" class="input" id="js-player2-guess-input">
+                <span class="error" id="js-guess-error-2">Error</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Game Controls -->
+          <div class="game-controls">
+            <button type="button" class="btn" id="js-submit-guess">Submit Guess</button>
+            <button type="button" class="btn btn--disabled" id="js-reset-game" disabled>Reset Game</button>
+            <button type="button" class="btn btn--disabled" id="js-clear-game" disabled>Clear Game</button>
+          </div>
+        </div>
+
+
+        <!-- Latest Score -->
+        <div class="surface">
+
+          <span class="title">Latest Score</span class="title">
+
+          <div class="results">
+
+            <div class="results__card">
+              <span class="results__name" id="js-results-name1">Player 1</span>
+          <span class="results__detail">current guess</span>
+          <span class="results__number" id="js-results-guess1">0</span>
+          <span class="results__detail results__detail--large" id="js-results-message1"></span>
+        </div>
+
+        <div class="results__card">
+          <span class="results__name" id="js-results-name2">Player 2</span>
+          <span class="results__detail">current guess</span>
+          <span class="results__number" id="js-results-guess2">0</span>
+          <span class="results__detail results__detail--large" id="js-results-message2"></span>
+        </div>
+
+        </div>
+
+        </div>
+
+      </section>
+
+      <!-- Past Games Column -->
+      <section class="past-games">
+
+        <!-- Game Card -->
+        <div class="game-card surface surface--dark-border">
+          <div class="game-card__header">
+            <span class="game-card__name">Challenger 1 Name</span>
+            <span>vs.</span>
+            <span class="game-card__name">Challenger 2 Name</span>
+          </div>
+          <div class="game-card__body">
+            <span class="game-card__winner">Challenger 2 Name</span>
+            <span class="game-card__winner game-card__winner--lite">Winner</span>
+          </div>
+          <div class="game-card__footer">
+            <div>
+              <span class="game-card__number">47</span>
+              <span>Guesses</span>
+            </div>
+            <div>
+              <span class="game-card__number">1.35</span>
+              <span>Minutes</span>
+            </div>
+            <div>
+              <i class="fas fa-times-circle"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game Card -->
+        <div class="game-card surface surface--dark-border">
+          <div class="game-card__header">
+            <span class="game-card__name">Challenger 1 Name</span>
+            <span>vs.</span>
+            <span class="game-card__name">Challenger 2 Name</span>
+          </div>
+          <div class="game-card__body">
+            <span class="game-card__winner">Challenger 2 Name</span>
+            <span class="game-card__winner game-card__winner--lite">Winner</span>
+          </div>
+          <div class="game-card__footer">
+            <div>
+              <span class="game-card__number">47</span>
+              <span>Guesses</span>
+            </div>
+            <div>
+              <span class="game-card__number">1.35</span>
+              <span>Minutes</span>
+            </div>
+            <div>
+              <i class="fas fa-times-circle"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game Card -->
+        <div class="game-card surface surface--dark-border">
+          <div class="game-card__header">
+            <span class="game-card__name">Challenger 1 Name</span>
+            <span>vs.</span>
+            <span class="game-card__name">Challenger 2 Name</span>
+          </div>
+          <div class="game-card__body">
+            <span class="game-card__winner">Challenger 2 Name</span>
+            <span class="game-card__winner game-card__winner--lite">Winner</span>
+          </div>
+          <div class="game-card__footer">
+            <div>
+              <span class="game-card__number">47</span>
+              <span>Guesses</span>
+            </div>
+            <div>
+              <span class="game-card__number">1.35</span>
+              <span>Minutes</span>
+            </div>
+            <div>
+              <i class="fas fa-times-circle"></i>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+
+</html>
